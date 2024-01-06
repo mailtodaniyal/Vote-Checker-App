@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            background-color: yellow;
+            border: 1px solid black;
+            border-radius: 15px;
+            height: 300px;
+            width: 400px;
+            text-align: center;
+            margin-left: 450px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 style="color: blue;">Vote Checkor App</h1>
+        <input style="background-color: aqua;" type="number" id="voter" placeholder="Enter your Age">
+        <button style="color: white; background-color: red; border-radius: 10px;"
+            onclick="CheckEligibility()">Check</button>
+        <p id="results"></p>
+    </div>
+    <script>
+        function CheckEligibility() {
+            var age = document.getElementById("voter").value;
+
+            if (!(age)) {
+                document.getElementById("results").innerHTML = "Please enter your age"
+            }
+            else {
+                if (age >= 18 && age <= 60) {
+                    document.getElementById("results").innerHTML = "You are eligible"
+                }
+                else if (age > 60) {
+                    document.getElementById("results").innerHTML = "you are overage"
+                }
+                else {
+                    document.getElementById("results").innerHTML = "you are not eligible"
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
